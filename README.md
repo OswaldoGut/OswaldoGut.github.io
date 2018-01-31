@@ -1,163 +1,158 @@
-p h o t o r a m a 
-====================
+# Jalpc-A.  [![Analytics](https://ga-beacon.appspot.com/UA-79921898-1/welcome-page)](http://JiaKunUp.github.com/Jalpc-A)
 
-![photorama](https://raw.githubusercontent.com/sunbliss/photorama/gh-pages/photorama_thumb.gif)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-----------
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
+[![forthebadge](http://forthebadge.com/badges/uses-js.svg)](http://forthebadge.com)
 
----> [DEMO](https://sunbliss.github.io/photorama/ "DEMO")  <---
+<http://angular.jack003.com>
 
-----------
+![Jalpc-A](Jalpc-A.gif)
 
-A theme for **jekyll**. 
+Jalpc-A is a front end web application, it is written in Angularjs and the theme is similar with [Jalpc](http://JiaKunUp.github.com/jalpc_jekyll_theme)
 
-Created for gh-pages (project page).
+We can register an account at this website and login to comment, only admin user can add blogs, if you like you can build a blog which everyone can add blogs,besides the app's backhend platform is based on [Leancloud](https://leancloud.cn/),you can use [Parse](https://parse.com/) as well.
 
-This template was crafted having in mind the photobloggers.
+If you like this Jekyll theme,please give me encouragement and star this project,I will make it better.
 
-It uses [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll "Clean Blog") as its basis.
+## Getting Started
 
-----------
-## Change Log
+If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by Smashing Magazine.
 
-### Version 2.1 (3/22/2017)
+### Fork, then clone
 
-* Fixed script loading. 
-* Fixed padding bottom for the navbar toggle menu.
+**Fork** the repo, and then **clone** it so you've got the code locally.
 
+```
+$ git clone https://github.com/<your githubname>/Jalpc-A.git
+$ cd Jalpc-A
+$ gem install jekyll # If you don't have jekyll installed
+$ rm -rf _site && jekyll server
+```
+### Get a Leancloud account
 
-### Version 2.0 (2/4/2017)
+Register an account at **Leancloud** and create a application, then in the settings of application you can get your **App ID** and **App Key**, replace them in `js/app.js`.
 
-* HTTPS is now enforced. 
+![Leancloud-app](Leancloud-app.jpg)
 
-**Custom Domains are not supported.**
+> **Parse** is similar.
 
-For the time being, the only way to apply a custom domain name is by removing HTTPS as of the previous version. 
-Hoping Github developers will give its users the ability to add a custom domain served under security.
+### Jekyll Serve
 
-### Version 1.2 (1/31/2017)
+Then, start the Jekyll Server. I always like to give the --watch option so it updates the generated HTML when I make changes.
 
-* Fixed footer code so that the twitter icon links to the twitter_username instead of instagram_username.
+```
+$ jekyll serve --watch
+```
 
-### Version 1.1 (7/15/2016)
+Now you can navigate to localhost:4000 in your browser to see the site.
 
-* Improved galleries and search section.
-* Better rendering of the header text.
+### Npm
 
-### Version 1.0 (6/19/2016)
-* Initial Template
+You can use npm or other local web service to view the web site,remember to remove front matter in `website.html`.
 
-----------
+### Using Github Pages
 
- **IMPORTANT!!!**
-================
+You can host your Jekyll site for free with Github Pages. [Click here](https://pages.github.com) for more information.
 
-### Before you begin: Change the URL and the BASEURL as well as the internal nav links in the _config.yml
+A configuration tweak if you're using a gh-pages sub-folder
 
-The **URL** should say `https://yourusername.github.io`
+### CNAME
 
-The **BASEURL** should say `/repositoryname`
+Replace your website domain in **CNAME** file.
 
-**Internal nav** should say
+## Features
 
-  nav:
+### Login with github account
 
-  - GALLERY: `"https://yourusername.github.io/repositoryname/gallery/"`
-  - JOURNAL: `"https://yourusername.github.io/repositoryname/journal/"`
-  - ABOUT: `"https://yourusername.github.io/repositoryname/about/`"
+You can login with github account,the web application use [leancloud engine](https://github.com/JiaKunUp/Jalpc-A-engine) to realize it.when you logined in,your username in my blog is `gh_<your_github_username>`.
 
-If there are problems with loading assets like CSS files and images, make sure that both **URL** and **BASEURL** are set correctly!!! 
+### Web analytics
 
-----------
+I use [Google analytics](https://www.google.com/analytics/) to do web analytics, you can register an account and apply an application, just replace the javascript code in `website.html`.
 
- **NOT FOR HTTPS served repos!!!**
-==================================
+### Rich Text Editor
 
-* Applies for v1.2!
+I use [summernote](https://github.com/summernote/angular-summernote) to generate a rich text editor at web page,you can write many styles of words and add pictures, videos and so on.It's very easy to write an article.
+> When you want to upload an image,the image will be uploaded to a background platform(qiniu cloud service).
 
-If you want to use your **own domain** go to the root of your project's repository, create a CNAME file and add a line with your domain name, e.g. `www.yourdomain.com`.
+![rich text editor](rte.jpeg)
 
-Go to your domain name registrar and add a CNAME record pointing your domain to GitHub Pages:
-- type: CNAME
-- host: www.yourdomainname.com
-- answer: yourusername.github.io/repositoryname
-- TTL: 300
+### Share
 
-----------
+Every blog, I generate a QRCode image with [angular-qrcode](https://github.com/monospaced/angular-qrcode),this is the absURL about the blog,you can get the blog in other devices and share.
 
-Usage
-============ 
+### Comment
 
-###Quick Start
+* Login and comment
+* Also summernote editor
+* Reply to others' comments
+* Delete your previous comments
 
-1. [Fork this repository](https://github.com/sunbliss/photorama/fork) to get started. 
-2. Go to `https://github.com/yourusername/photorama/settings`
-3. Rename the repository to your new project, e.g. *myphotoblog*
-2. Create a new branch called `gh-pages` in your repository. 
-3. Go to the branches directory at `https://github.com/yourusername/repositoryname/branches` and *change* **default branch** to **gh-pages**.
-4. Delete **master** branch. 
-3. GitHub will build your site automatically and publish it at `https://yourusername.github.io/repositoryname/`.  
+### Pagination
 
-----------
+The pagination is baseed on [ui-bootstrap](https://github.com/angular-ui/bootstrap),but there is a small bug: if you put `items-per-page` in html DOM and use page params to get the data with `ui-router`,the page will go to the matching page and return to the first page immediately.So I didn't put it in html,and re calculate the total count, now the url like this: `http://angular.jack003.com/website.html#/blogs/2`, we can go back and go forward through browser between pages.
 
-- The homepage welcomes the visitors with 3 animated photos of your choice. It is recommended that all three are landscape orientated for best view.
+### Safe
 
-To change the welcome content at the far left of the Home page go here: `/index.html` and fill the responding lines of the YAML with your desired text.
+Since the project is **open source**, we must consider user's username and password and safe connection.The below is analysis chart when use access to the website.
 
-----------
+![connect](connect.png)
 
-- To enable **disqus** comments in the posts, change their front matter for comments to 'true'.
+Client get the web application files(html,css,js) from `http://angular.jack003.com`, all the user account connections and token connections are with `https://api.leancloud.cn`, and some jsonp scripts are with `http://jalpc-a.leanapp.cn` such as github login and blog's short url.
 
-You must have a registered account in disqus, where you will also register a forum for your website.
+##
 
-Find the line `s.src = '//yourproject.disqus.com/embed.js';  // ` in the disqus_comments.html and REPLACE 'yourproject' with your forum shortname.
+### To Do
 
-----------
+* search page
+* donate
+* message
+* send email
 
-- In order to send **newsletters** about your posts to your subscribers, you should register an account in [tinyletter](http://www.tinyletter.com " tinyletter").
+### Put in a Jalpc-A Plug
 
-Find the line `'https://tinyletter.com/yourproject', ` in the *newsletter.html* and replace 'yourproject' with your registered website.
+If you want to give credit to the Jalpc-A theme with a link to my personal website <http://angular.jack003.com>, that'd be awesome. No worries if you don't.
 
-You can always ommit the newsletter rendering by deleting the line `{% include newsletter.html %}
-` in the *default.html* layout.
+### Enjoy
 
-----------
+I hope you enjoy using Jalpc-A. If you encounter any issues, please feel free to let me know by creating an issue. I'd love to help.
 
-If you want to use the matching **NEWSLETTER** template, you must always create a new file  by copying its respective index.html and renaming it to e.g. 2016-March-newsletter.html and then save it inside the folder and the accompanying images inside the 'images folder', so it can be accessed to your viewers through their browser. In this case the root url for the above newsletter will be ***http://yourgithubusername.github.io/yourproject/2016-March-newsletter.html***. Copy this link and replace this part of the code `http://www.yoursite.com/newsletter/year-month-newsletter` with it.
+## Upgrading Jalpc-A
 
-----------
+Jalpc-A is always being improved by its users, so sometimes one may need to upgrade.
 
-**TAGS** and **CATEGORIES** of the posts 
+### Ensure there's an upstream remote
 
-When you add a tag or a category name in the front matter of a post, don't forget to add the responding markdown files in /journal/tag/ folder and in /journal/category folder, so they can always render when browsing the journal or searching in the respective page.
+If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
 
-----------
+```
+git remote add upstream https://github.com/johnotander/pixyll.git
+```
 
-All the credits and the helpers can be found at **ABOUT** page.
+### Pull in the latest changes
 
+```
+git pull upstream master
+```
 
-----------
+There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
 
-Read <a href="https://sunbliss.github.io/photorama/journal/images-size-for-better-performance/">**this**</a> post if you want to ensure your website always loads fast.
+## Thanks to the following
 
+* [Jekyll](http://jekyllrb.com)
+* [Bootstrap](http://www.bootcss.com)
+* [ui-router](https://github.com/angular-ui/ui-router)
+* [ui-bootstrap](https://github.com/angular-ui/bootstrap)
+* [angular-toastr](https://github.com/Foxandxss/angular-toastr)
+* [angular-summernote](https://github.com/summernote/angular-summernote)
+* [angular-qrcode](https://github.com/monospaced/angular-qrcode)
 
-----------
+## Contributing
 
-I hope you will find it useful for your projects, photographic or not.
-
-
-----------
-
-
-##License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Filippo Oretti, Dario Andrei
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
